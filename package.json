@@ -2,6 +2,10 @@
   "name": "ias",
   "version": "0.0.1",
   "description": "Illustration animation system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callmesoul/ias.git"
+  },
   "main": "dist/isa.js",
   "author": "callmesoul",
   "license": "MIT",
