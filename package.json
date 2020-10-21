@@ -1,23 +1,22 @@
 {
-  "name": "webpack-multiple-pages-template",
+  "name": "ias",
   "version": "0.0.1",
-  "description": "webpack myltiple pages template",
-  "main": "index.js",
+  "description": "Illustration animation system",
+  "main": "dist/isa.js",
   "author": "callmesoul",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development  webpack-dev-server --inline --progress --config ./build/webpack.dev.conf.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.conf.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.conf.js  --mode production",
     "start": "webpack-dev-server --mode development",
     "lint": "eslint --ext .js --ext .html src/",
     "lint-fix": "eslint --fix --ext --ext .html  src/"
   },
-  "dependencies": {
-    "jquery": "^3.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -46,6 +45,8 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",

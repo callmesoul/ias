@@ -11,14 +11,14 @@ module.exports = {
       var n = name.slice(start, end)
       n = n.split('/')[1]
       eArr.push(name)
-      eArr.push('babel-polyfill') //引入这个，是为了用async await，一些IE不支持的属性能够受支持，兼容IE浏览器用的
+      eArr.push('babel-polyfill') // 引入这个，是为了用async await，一些IE不支持的属性能够受支持，兼容IE浏览器用的
       entry[n] = eArr
     })
     return entry
   },
   getHtmlConfig: function (name, chunks) {
     const env = process.env.NODE_ENV
-    let isMini = env !== 'development';
+    const isMini = env !== 'development'
     return {
       template: `./src/pages/${name}.html`,
       filename: `${name}.html`,

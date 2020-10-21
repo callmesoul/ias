@@ -8,8 +8,5 @@
     },
     "parserOptions": {
         "parser": "babel-eslint"
-    },
-    "env": {
-        "jquery":true
     }
 }

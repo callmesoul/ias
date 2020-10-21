@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
   getEntry,
@@ -13,11 +12,7 @@ const {
 var entryObj = getEntry()
 var htmlArray = []
 var plugins = [ // 打包前先清空打包目录
-  new CleanWebpackPlugin(),
-  // 全局配置jquery
-  new webpack.ProvidePlugin({
-    $: 'jquery'
-  })
+  new CleanWebpackPlugin()
 ]
 Object.keys(entryObj).forEach(function (element) {
   htmlArray.push({
@@ -28,7 +23,7 @@ Object.keys(entryObj).forEach(function (element) {
 })
 // 自动生成html模板
 htmlArray.forEach(function (element) {
-  plugins.push(new HtmlWebpackPlugin(getHtmlConfig(element._html, element.chunks)));
+  plugins.push(new HtmlWebpackPlugin(getHtmlConfig(element._html, element.chunks)))
 })
 
 module.exports = {
@@ -70,6 +65,15 @@ module.exports = {
         options: {
           name: '[name]_[hash].[ext]',
           outputPath: './assets/fonts'
+        }
+      }]
+    }, {
+      test: /\.(mp3)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name]_[hash].[ext]',
+          outputPath: './assets/audios'
         }
       }]
     }]
